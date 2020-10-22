@@ -27,6 +27,8 @@ util.inherits(Strategy, OAuth2Strategy);
 
 Strategy.prototype.userProfile = function (accessToken, done) {
   this._oauth2._useAuthorizationHeaderForGET = true;
+  console.log("AccessToken:");
+  console.log(accessToken);
   this._oauth2.get(this.options.userInfoURL, accessToken, (err, body) => {
     if (err) {
       return done(err);
