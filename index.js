@@ -44,6 +44,7 @@ Strategy.prototype.userProfile = function (accessToken, done) {
         lastName: json.family_name,
         username: json.preferred_username,
         email,
+        accessToken,
         avatar: json.avatar,
         realm: this.options.realm,
         raw: json
